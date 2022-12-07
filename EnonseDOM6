@@ -1,4 +1,13 @@
- function transfomasyon(el){
+  <div class="div1">
+
+    </div>
+    <button>Get</button>
+
+    <div class="div2">
+
+    </div>
+    <script>
+        function transfomasyon(el){
             return `<ul>
                         <li><input type="checkbox" name="country" value=${el} />${el}</li>
                     </ul>`;
@@ -34,3 +43,4 @@
 
 
         }
+    </script>
