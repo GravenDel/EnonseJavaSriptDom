@@ -1,0 +1,36 @@
+ function transfomasyon(el){
+            return `<ul>
+                        <li><input type="checkbox" name="country" value=${el} />${el}</li>
+                    </ul>`;
+        }
+
+        const countryArray = ["Haiti", "France", "United States", "Belgium", "Canada", 
+                            "Jamaica", "Mexico", "Brazil", "Nigeria"];
+
+        let map = countryArray.map(transfomasyon)
+        
+
+   
+        const div1 = document.querySelector(".div1")
+
+        for(let country of map){
+            div1.innerHTML +=country
+        }
+
+        const div2 = document.querySelector(".div2");
+
+       const klike= document.querySelector("button")
+        klike.onclick =(event)=>{
+            const eleman =[]
+            const inputYo= document.querySelectorAll("input[name = country]");
+
+            for (i=0; i<inputYo.length; i++){
+                if(inputYo[i].checked){
+                    eleman.push(inputYo[i].value)
+                }
+            }
+            console.log(eleman)
+            document.write(eleman)
+
+
+        }
