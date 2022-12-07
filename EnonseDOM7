@@ -1,0 +1,27 @@
+
+	<label> Phone </label>
+				<input  placeholder="Mobile Number" >
+
+<script type="text/javascript">
+
+let number=document.querySelector('input')
+
+number.onkeydown=function(event) {
+	   number.maxLength=8;
+				let v=event.which || event.keycode;
+				
+								if((v>=48 && v<=57) || v==8){
+
+												return true
+								}else if(event.target.value.length>8){
+
+												
+												return false
+
+								}else{
+
+												return false
+								}
+
+								
+}
