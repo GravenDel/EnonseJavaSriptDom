@@ -13,7 +13,7 @@
                     </ul>`;
         }
 
-        const countryArray = ["Haiti", "France", "United States", "Belgium", "Canada", 
+        const countryArray = ["Haiti", "France", "United-States", "Belgium", "Canada", 
                             "Jamaica", "Mexico", "Brazil", "Nigeria"];
 
         let map = countryArray.map(transfomasyon)
