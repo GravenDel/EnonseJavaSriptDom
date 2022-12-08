@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enonse8</title>
+</head>
+<body>
+
+	
+    <main>
+        <div class="group">
+            <input type="text"/>
+        </div>
+        <div class="group">
+            <input type="text"/>
+        </div>
+        <div class="group">
+            <input type="text"/>
+        </div>
+        <div class="group">
+            <input type="text"/>
+        </div>
+        <div class="group">
+            <input type="text"/>
+        </div>
+        <button>Next</button>
+    </main>
+    <script>
+        let tab = document.querySelectorAll("input")    
+        let i = 0
+        
+        document.querySelector("button").addEventListener("click",()=>{
+            tab[i].focus()
+            tab[i].style.borderColor= "lightblue"
+            i == tab.length-1 ? i = 0  : i++
+        })
+
+    </script>
+
+</body>
+</html>
