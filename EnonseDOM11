@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title>Enonse11</title>
+    <style>
+      div {
+        height: 300px;
+        width: 300px;
+        background-color:lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+
+    <script>
+      
+      const div = document.querySelector("div");
+      div.onmousemove = (event) => {
+       
+        let x = event.clientX ;
+        let y = event.clientY ;
+        let z = (x+y)/ 2
+        if (x <= 255 && y <= 255 && z <= 255) {
+          div.setAttribute ("style" , `background-color: rgb(${x},${y},${z});`);
+        }
+      };
+    </script>
+  </body>
+</html>
