@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    
+    <main>
+        <h1>What is Lorem Ipsum?</h1>
+        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+        
+        <button id="copy">📋</button>
+      </main> 
+      
+      <script>
+            const h1 = document.querySelector('h1');
+            const p = document.querySelector('p');
+            const bouton = document.querySelector('button')
+            const copy = new Event('copy');
+
+            h1.oncopy = (event)=>{
+                event.preventDefault()          
+            }
+
+            p.oncopy = (event)=>{
+                event.preventDefault()           
+            }
+            
+            bouton.onclick = (event)=>{
+                let range = document.createRange() 
+                range.setStart(h1.firstChild, 0) 
+                range.setEnd(p.firstChild, p.textContent.length) 
+                let select = document.getSelection();
+                select.addRange(range);
+                navigator.clipboard.writeText( select.toString() );
+                
+                
+            }
+      </script>
+</body>
+</html>
