@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title>Enonse11</title>
+    <style>
+      div {
+        height: 300px;
+        width:100%;
+        background-color:lightgray;
+        padding-left: 600px;
+        padding-top: 250px;
+      }
+      .button{
+      	margin-left: 600px;
+      	margin-top: 20px;
+      }
+
+    </style>
+   
+  </head>
+  <body>
+  
+ <div id="timer" value="9">
+
+ 	9
+
+ </div>       
+ <button id="demare" class="button">Start</button>
+<script type="text/javascript">
+let kontni = document.getElementById("timer");
+let demaRe = document.getElementById("demare");
+
+let inisyalizasyon = 9;
+let timeout;
+
+const demare = () => {
+
+    kontArebout();
+
+};
+
+const kontArebout = () => {
+    
+    inisyalizasyon--;
+
+
+    if (inisyalizasyon <= 0) {
+
+        inisyalizasyon=0
+
+        kontni.innerHTML= "time out"
+        
+    }else{
+
+        kontni.textContent = `${inisyalizasyon}`;
+
+    }
+
+    timeout = setTimeout(kontArebout, 1000);
+};
+
+demaRe.addEventListener("click", demare);
+</script>
+  </body>
+</html>
