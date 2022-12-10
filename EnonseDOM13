@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <title>Enonse11</title>
+
+    <style>
+      div {
+        height: 100%;
+        width:100%;
+        background-color:lightblue;
+        
+      }
+      button{
+      	margin-left: 450px;
+      	margin-top: 20px;
+      }
+
+    </style>
+   
+   
+  </head>
+  <body>
+ 
+  
+     <main>
+     <button>Get data</button>
+     <div class="data-wrapper">
+         <table>
+                  <tr>
+                     <th>
+                         Tit
+                     </th>
+                     <th>
+                         Complete
+                     </th>
+                     <th>
+                         ID
+                     </th>
+                 </tr>
+            
+             <tbody>
+
+             </tbody>
+         </table>
+     </div>
+
+     <main>
+
+
+<script type="text/javascript">
+
+
+let button = document.querySelector('button')
+let receiver = document.querySelector('tbody')
+
+var requestURL = 'https://jsonplaceholder.typicode.com/todos';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+
+request.onload = function () {
+    var todo = request.response;
+    button.onclick = () => {
+        API(todo, todo.length);
+    }
+
+}
+
+API = (todo, FDS) => {
+
+    for (let i = 0; i < FDS; i++) {
+        let range = document.createElement('tr')
+
+        let titkolon = document.createElement('td')
+        titkolon.textContent = todo[i].title
+        range.append(titkolon)
+
+        let kol = document.createElement('td')
+        let check = document.createElement('input')
+        check.setAttribute('type', 'checkbox')
+        if (todo[i].completed === true) {
+
+            check.setAttribute('checked', '')
+        }
+
+        kol.append(check)
+        range.append(kol)
+
+        let idDone = document.createElement('td')
+        idDone.textContent = todo[i].id
+        range.append(idDone)
+
+        receiver.append(range)
+
+    }
+
+}
+</script>
+  </body>
+</html>
